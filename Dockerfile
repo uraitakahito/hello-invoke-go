@@ -57,6 +57,13 @@ RUN USERNAME=${user_name} \
     VERSION=${go_version} \
       /usr/src/features/src/go/install.sh
 
+#
+# Install Python
+#
+RUN USERNAME=${user_name} \
+    VERSION=${python_version} \
+      /usr/src/features/src/python/install.sh
+
 USER ${user_name}
 
 #
@@ -81,6 +88,12 @@ RUN /usr/local/go/bin/go install golang.org/x/tools/cmd/goimports@latest
 # https://github.com/golang/vscode-go/blob/master/docs/settings.md#golinttool
 #
 RUN /usr/local/go/bin/go install honnef.co/go/tools/cmd/staticcheck@latest
+
+#
+# poetry
+#
+RUN /usr/local/python/current/bin/pip install --no-cache-dir --upgrade pip && \
+  /usr/local/python/current/bin/pip install --no-cache-dir poetry
 
 WORKDIR /app
 
