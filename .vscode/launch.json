@@ -6,7 +6,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "only target file",
+      "name": "only target Go file",
       "type": "go",
       "request": "launch",
       // Supported modes: debug/test/exec/auto
@@ -17,7 +17,7 @@
       "args": []
     },
     {
-      "name": "test target directory",
+      "name": "test target Go directory",
       "type": "go",
       "request": "launch",
       "mode": "test",
