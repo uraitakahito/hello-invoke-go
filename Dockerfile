@@ -66,7 +66,12 @@ RUN INSTALL_GO_TOOLS=true \
 
 #
 # Install Python
+#   https://github.com/uraitakahito/features/blob/mymain/src/python/install.sh
 #
+# see also:
+#   https://github.com/uraitakahito/features/blob/426e14ecbc3df89ea63f7b3b0a3721f2960f119a/src/python/install.sh#L667-L670
+ENV PATH=$PATH:/usr/local/python/current/bin
+
 RUN USERNAME=${user_name} \
     VERSION=${python_version} \
       /usr/src/features/src/python/install.sh
@@ -88,8 +93,8 @@ RUN /usr/local/go/bin/go install golang.org/x/tools/cmd/goimports@latest
 #
 # poetry
 #
-RUN /usr/local/python/current/bin/pip install --no-cache-dir --upgrade pip && \
-  /usr/local/python/current/bin/pip install --no-cache-dir poetry
+RUN pip install --no-cache-dir --upgrade pip && \
+  pip install --no-cache-dir poetry
 
 WORKDIR /app
 
