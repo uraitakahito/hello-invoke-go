@@ -16,6 +16,6 @@ Run the following commands inside the Docker containers:
 ```console
 % poetry install
 % poetry run invoke -l
-% poetry run invoke --help hello
-% poetry run invoke hello --name foo
+% poetry run invoke --help target.clean
+% poetry run invoke target.clean
 ```
