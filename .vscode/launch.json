@@ -26,5 +26,16 @@
       "args": ["-test.v"],
       "showLog": true
     },
+    {
+      "name": "Debug invoke task: hello",
+      "type": "debugpy",
+      "request": "launch",
+      // https://code.visualstudio.com/docs/python/debugging#_module
+      "module": "invoke",
+      "args": [
+        "target.clean",
+      ],
+      "cwd": "${workspaceFolder}"
+    }
   ]
 }
